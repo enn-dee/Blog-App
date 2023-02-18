@@ -9,8 +9,14 @@
     <header>
         <h1><a href="/">Django Blog</a></h1>
     </header>
-
-    {{ posts }}
+    {% for post in posts %}
+    <article>
+        <time>Published: {{ post.published_date }}</time>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </article>
+    <!-- {{ post }} -->
+    {% endfor %}
 </body>
 
 </html>
